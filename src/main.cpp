@@ -16,9 +16,6 @@ byte SNARE[9] = {
 HelloDrum snare(10, 11);
 
 void setup() {
-  usbMIDI.begin();
-  Serial.begin(38400);
-
   snare.setCurve(SNARE[6]);
 }
 
