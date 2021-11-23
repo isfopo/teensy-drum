@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <hellodrum.h>
 
+#define MIDI_CHANNEL 0
+
 byte KICK[6] = {
     100, //sensitivity (1-100)
     35,  //threshold (1-100)
@@ -31,8 +33,8 @@ void setup() {
 }
 
 void loop() {
-    snare.dualPiezo(SNARE[0], SNARE[1], SNARE[2], SNARE[3], SNARE[4], SNARE[5]);
   kick.singlePiezo(KICK[0], KICK[1], KICK[2], KICK[3]);
+  snare.dualPiezo(SNARE[0], SNARE[1], SNARE[2], SNARE[3], SNARE[4], SNARE[5]);
 
   if (kick.hit == true) {
     usbMIDI.sendNoteOn(KICK[4], kick.velocity, MIDI_CHANNEL); //(note, velocity, channel)
@@ -41,12 +43,12 @@ void loop() {
 
   if (snare.hit == true)
   {
-    usbMIDI.sendNoteOn(SNARE[7], snare.velocity, 10); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(SNARE[7], 0, 10);
+    usbMIDI.sendNoteOn(SNARE[7], snare.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOff(SNARE[7], 0, MIDI_CHANNEL);
   }
   else if (snare.hitRim == true)
   {
-      usbMIDI.sendNoteOn(SNARE[8], snare.velocity, 10); //(note, velocity, channel)
-      usbMIDI.sendNoteOff(SNARE[8], 0, 10);
+      usbMIDI.sendNoteOn(SNARE[8], snare.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOff(SNARE[8], 0, MIDI_CHANNEL);
   }
 }
