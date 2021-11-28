@@ -5,23 +5,23 @@
 
 byte KICK[6] = {
     100, //sensitivity (1-100)
-    45,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    35,  //mask time (1-)
+    40,  //mask time (1-)
     36,  //note (0-127)
     1    //curve type (0-4)
 };
 
 byte SNARE[9] = {
-    90, //sensitivity (1-100)
-    50, //threshold (1-100)
-    30, //scan time (1-100)
-    10, //mask time (1-100)
-    10, //rim sensitivity (1-100)
-    3,  //rim threshold (1-100)
-    3,  //curve type (0-4)
-    38, //note (0-127)
-    37  //note of cross stick (0-127)
+    90,  //sensitivity (1-100)
+    50,  //threshold (1-100)
+    30,  //scan time (1-100)
+    10,  //mask time (1-100)
+    10,  //rim sensitivity (1-100)
+    3,   //rim threshold (1-100)
+    3,   //curve type (0-4)
+    38,  //note (0-127)
+    37   //note of cross stick (0-127)
 };
 
 byte HIHAT[6] = {
