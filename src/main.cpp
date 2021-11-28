@@ -24,21 +24,22 @@ byte SNARE[9] = {
     37  //note of cross stick (0-127)
 };
 
-byte HIHAT[6] = {
+byte HIHAT[7] = {
     100, //sensitivity
     10,  //threshold
     10,  //scan start
     30,  //scan end
     46,  //note of open
     42,  //note of close
+    3
 };
 
 byte HIHAT_PEDAL[7] = {
-    90,  //sensitivity
-    30,  //threshold
-    60,  //scan start
-    80,  //scan end
-    20,  //pedal sensitivity
+    100,  //sensitivity
+    20,  //threshold
+    5,  //scan start
+    10,  //scan end
+    10,  //pedal sensitivity
     44,  //note of pedal
     100, //note threshold
 };
