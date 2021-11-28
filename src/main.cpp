@@ -119,14 +119,14 @@ HelloDrum kick(12);
 HelloDrum snare(10, 11);
 HelloDrum hihat(1);
 HelloDrum hihatPedal(0);
-HelloDrum pad1(2);
-HelloDrum pad2(3);
-HelloDrum pad3(4);
-HelloDrum pad4(5);
-HelloDrum pad5(6);
-HelloDrum pad6(7);
-HelloDrum pad7(8);
-HelloDrum pad8(9);
+HelloDrum pad1(5);
+HelloDrum pad2(4);
+HelloDrum pad3(3);
+HelloDrum pad4(2);
+HelloDrum pad5(9);
+HelloDrum pad6(8);
+HelloDrum pad7(7);
+HelloDrum pad8(6);
 
 void setup()
 {
