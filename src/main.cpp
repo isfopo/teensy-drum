@@ -43,15 +43,26 @@ byte HIHAT_PEDAL[7] = {
     100, //note threshold
 };
 
+byte PAD[6] {
+    100, //sensitivity (1-100)
+    50,  //threshold (1-100)
+    10,  //scan time (1-)
+    40,  //mask time (1-)
+    41,  //note (0-127)
+    1    //curve type (0-4)
+};
+
 HelloDrum kick(12);
 HelloDrum snare(10, 11);
 HelloDrum hihat(1);
 HelloDrum hihatPedal(0);
+HelloDrum pad1(2);
 
 void setup()
 {
   kick.setCurve(KICK[5]);
   snare.setCurve(SNARE[6]);
+  pad1.setCurve(PAD[5]);
 }
 
 void loop()
@@ -60,6 +71,7 @@ void loop()
   snare.dualPiezo(SNARE[0], SNARE[1], SNARE[2], SNARE[3], SNARE[4], SNARE[5]);
   hihat.HH(HIHAT[0], HIHAT[1], HIHAT[2], HIHAT[3]);
   hihatPedal.hihatControl(HIHAT_PEDAL[0], HIHAT_PEDAL[1], HIHAT_PEDAL[2], HIHAT_PEDAL[3], HIHAT_PEDAL[4]);
+  pad1.singlePiezo(PAD[0], PAD[1], PAD[2], PAD[3]);
 
   if (kick.hit == true)
   {
@@ -100,5 +112,11 @@ void loop()
       usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, 10); //(note, velocity, channel)
       usbMIDI.sendNoteOff(HIHAT_PEDAL[5], 0, 10);
     }
+  }
+  
+  if (pad1.hit == true)
+  {
+    usbMIDI.sendNoteOn(PAD[4], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOff(PAD[4], 0, MIDI_CHANNEL);
   }
 }
