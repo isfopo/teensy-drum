@@ -7,16 +7,16 @@ byte KICK[6] = {
     100, //sensitivity (1-100)
     50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
+    200,  //mask time (1-)
     36,  //note (0-127)
-    1    //curve type (0-4)
+    3    //curve type (0-4)
 };
 
 byte SNARE[9] = {
     90, //sensitivity (1-100)
     50, //threshold (1-100)
-    30, //scan time (1-100)
-    10, //mask time (1-100)
+    5, //scan time (1-100)
+    40, //mask time (1-100)
     10, //rim sensitivity (1-100)
     3,  //rim threshold (1-100)
     3,  //curve type (0-4)
