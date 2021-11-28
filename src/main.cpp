@@ -74,13 +74,13 @@ void loop()
   {
     if (analogRead(0) < HIHAT_PEDAL[0])
     {
-      usbMIDI.sendNoteOn(HIHAT[4], hihat.velocity, 10); //(note, velocity, channel)
-      usbMIDI.sendNoteOff(HIHAT[4], 0, 10);
+      usbMIDI.sendNoteOn(HIHAT[4], hihat.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOff(HIHAT[4], 0, MIDI_CHANNEL);
     }
     else
     {
-      usbMIDI.sendNoteOn(HIHAT[5], hihat.velocity, 10); //(note, velocity, channel)
-      usbMIDI.sendNoteOff(HIHAT[5], 0, 10);
+      usbMIDI.sendNoteOn(HIHAT[5], hihat.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOff(HIHAT[5], 0, MIDI_CHANNEL);
     }
   }
 }
