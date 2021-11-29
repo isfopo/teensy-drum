@@ -46,73 +46,73 @@ byte HIHAT_PEDAL[7] = {
 
 byte PAD_1[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    41, //note (0-127)
+    200,  //mask time (1-)
+    41,  //note (0-127)
     1,   //curve type (0-4)
 };
 
 byte PAD_2[6]{
-    100, //sensitivity (1-100)
-    30,  //threshold (1-100)
-    10,  //scan time (1-)
-    40,  //mask time (1-)
-    43, //note (0-127)
-    1,   //curve type (0-4)
+    10, //sensitivity (1-100)
+    50,  //threshold (1-100)
+    50,  //scan time (1-)
+    100,  //mask time (1-)
+    43,  //note (0-127)
+    4,   //curve type (0-4)
 };
 
 byte PAD_3[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    45, //note (0-127)
+    200,  //mask time (1-)
+    45,  //note (0-127)
     1,   //curve type (0-4)
 };
 
 byte PAD_4[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    47, //note (0-127)
+    200,  //mask time (1-)
+    47,  //note (0-127)
     1,   //curve type (0-4)
 };
 
 byte PAD_5[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    48, //note (0-127)
+    200,  //mask time (1-)
+    48,  //note (0-127)
     1,   //curve type (0-4)
 };
 
 byte PAD_6[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    49, //note (0-127)
+    200,  //mask time (1-)
+    49,  //note (0-127)
     1,   //curve type (0-4)
 };
 
 byte PAD_7[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    50, //note (0-127)
+    200,  //mask time (1-)
+    50,  //note (0-127)
     1,   //curve type (0-4)
 };
 
 byte PAD_8[6]{
     100, //sensitivity (1-100)
-    30,  //threshold (1-100)
+    50,  //threshold (1-100)
     10,  //scan time (1-)
-    40,  //mask time (1-)
-    51, //note (0-127)
+    200,  //mask time (1-)
+    51,  //note (0-127)
     1,   //curve type (0-4)
 };
 
@@ -133,6 +133,7 @@ void setup()
 {
   kick.setCurve(KICK[5]);
   snare.setCurve(SNARE[6]);
+  hihat.setCurve(HIHAT[6]);
   pad1.setCurve(PAD_1[5]);
   pad2.setCurve(PAD_2[5]);
   pad3.setCurve(PAD_3[5]);
