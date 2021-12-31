@@ -14,7 +14,7 @@ byte KICK[6] = {
 
 byte SNARE[9] = {
     90, //sensitivity (1-100)
-    50, //threshold (1-100)
+    10, //threshold (1-100)
     5, //scan time (1-100)
     40, //mask time (1-100)
     10, //rim sensitivity (1-100)
