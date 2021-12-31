@@ -117,7 +117,7 @@ byte PAD_8[6]{
 };
 
 HelloDrum kick(12);
-HelloDrum snare(10, 11);
+HelloDrum snare(11, 10);
 HelloDrum hihat(1);
 HelloDrum hihatPedal(0);
 HelloDrum pad1(5);
