@@ -152,51 +152,11 @@ void loop()
 
   // Pads
 
-  if (pads[0].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[0], pads[0].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[0], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[1].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[1], pads[1].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[1], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[2].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[2], pads[2].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[2], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[3].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[3], pads[3].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[3], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[4].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[4], pads[4].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[4], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[5].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[5], pads[5].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[5], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[6].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[6], pads[6].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[6], 0, MIDI_CHANNEL);
-  }
-
-  else if (pads[7].hit == true)
-  {
-    usbMIDI.sendNoteOn(PAD_NOTES[7], pads[7].velocity, MIDI_CHANNEL); //(note, velocity, channel)
-    usbMIDI.sendNoteOff(PAD_NOTES[7], 0, MIDI_CHANNEL);
+  for (int i = 0; i < 8; i++) {
+    if (pads[i].hit == true)
+    {
+      usbMIDI.sendNoteOn(PAD_NOTES[i], pads[i].velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOff(PAD_NOTES[i], 0, MIDI_CHANNEL);
+    }
   }
 }
