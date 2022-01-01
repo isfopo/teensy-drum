@@ -118,16 +118,16 @@ byte PAD_8[6]{
 
 HelloDrum kick(12);
 HelloDrum snare(11, 10);
-HelloDrum hihat(1);
-HelloDrum hihatPedal(0);
-HelloDrum pad1(5);
-HelloDrum pad2(4);
-HelloDrum pad3(3);
-HelloDrum pad4(2);
-HelloDrum pad5(9);
-HelloDrum pad6(8);
-HelloDrum pad7(7);
-HelloDrum pad8(6);
+HelloDrum hihat(8);
+HelloDrum hihatPedal(9);
+HelloDrum pad1(0);
+HelloDrum pad2(1);
+HelloDrum pad3(2);
+HelloDrum pad4(3);
+HelloDrum pad5(4);
+HelloDrum pad6(5);
+HelloDrum pad7(6);
+HelloDrum pad8(7);
 
 void setup()
 {
