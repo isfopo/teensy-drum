@@ -85,14 +85,10 @@ void setup()
   kick.setCurve(KICK[5]);
   snare.setCurve(SNARE[6]);
   hihat.setCurve(HIHAT[6]);
-  pads[0].setCurve(PADS[4]);
-  pads[1].setCurve(PADS[4]);
-  pads[2].setCurve(PADS[4]);
-  pads[3].setCurve(PADS[4]);
-  pads[4].setCurve(PADS[4]);
-  pads[5].setCurve(PADS[4]);
-  pads[6].setCurve(PADS[4]);
-  pads[7].setCurve(PADS[4]);
+
+  for (int i = 0; i < 8; i++) {
+    pads[i].setCurve(PADS[4]);
+  }
 }
 
 void loop()
@@ -101,14 +97,10 @@ void loop()
   snare.dualPiezo(SNARE[0], SNARE[1], SNARE[2], SNARE[3], SNARE[4], SNARE[5]);
   hihat.HH(HIHAT[0], HIHAT[1], HIHAT[2], HIHAT[3]);
   hihatPedal.hihatControl(HIHAT_PEDAL[0], HIHAT_PEDAL[1], HIHAT_PEDAL[2], HIHAT_PEDAL[3], HIHAT_PEDAL[4]);
-  pads[0].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[1].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[2].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[3].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[4].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[5].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[6].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pads[7].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+
+  for (int i = 0; i < 8; i++) {
+    pads[i].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  }
 
   // Kick
 
