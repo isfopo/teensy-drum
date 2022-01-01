@@ -36,12 +36,12 @@ byte HIHAT[7] = {
 
 byte HIHAT_PEDAL[7] = {
     100,  //sensitivity
-    20,  //threshold
+    15,  //threshold
     5,  //scan start
     10,  //scan end
     10,  //pedal sensitivity
     44,  //note of pedal
-    100, //note threshold
+    30, //note threshold
 };
 
 byte PADS[5]{
@@ -125,7 +125,7 @@ void loop()
 
   // HiHats
 
-  if (hihat.hit == true && !snare.hitRim)
+  if (hihat.hit == true)
   {
     if (hihatPedal.openHH == true)
     {
@@ -142,7 +142,6 @@ void loop()
   if (hihatPedal.hit == true)
   {
     usbMIDI.sendNoteOff(HIHAT[4], 0, MIDI_CHANNEL);
-
     if (hihatPedal.velocity > HIHAT_PEDAL[6])
     {
       usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, MIDI_CHANNEL);
