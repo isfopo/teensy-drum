@@ -68,28 +68,31 @@ HelloDrum snare(11, 10);
 HelloDrum hihat(8);
 HelloDrum hihatPedal(9);
 
-HelloDrum pad1(0);
-HelloDrum pad2(1);
-HelloDrum pad3(2);
-HelloDrum pad4(3);
-HelloDrum pad5(4);
-HelloDrum pad6(5);
-HelloDrum pad7(6);
-HelloDrum pad8(7);
+HelloDrum pads[8] = {
+  HelloDrum(0),
+  HelloDrum(1),
+  HelloDrum(2),
+  HelloDrum(3),
+  HelloDrum(4),
+  HelloDrum(5),
+  HelloDrum(6),
+  HelloDrum(7),
+};
+
 
 void setup()
 {
   kick.setCurve(KICK[5]);
   snare.setCurve(SNARE[6]);
   hihat.setCurve(HIHAT[6]);
-  pad1.setCurve(PADS[4]);
-  pad2.setCurve(PADS[4]);
-  pad3.setCurve(PADS[4]);
-  pad4.setCurve(PADS[4]);
-  pad5.setCurve(PADS[4]);
-  pad6.setCurve(PADS[4]);
-  pad7.setCurve(PADS[4]);
-  pad8.setCurve(PADS[4]);
+  pads[0].setCurve(PADS[4]);
+  pads[1].setCurve(PADS[4]);
+  pads[2].setCurve(PADS[4]);
+  pads[3].setCurve(PADS[4]);
+  pads[4].setCurve(PADS[4]);
+  pads[5].setCurve(PADS[4]);
+  pads[6].setCurve(PADS[4]);
+  pads[7].setCurve(PADS[4]);
 }
 
 void loop()
@@ -98,14 +101,14 @@ void loop()
   snare.dualPiezo(SNARE[0], SNARE[1], SNARE[2], SNARE[3], SNARE[4], SNARE[5]);
   hihat.HH(HIHAT[0], HIHAT[1], HIHAT[2], HIHAT[3]);
   hihatPedal.hihatControl(HIHAT_PEDAL[0], HIHAT_PEDAL[1], HIHAT_PEDAL[2], HIHAT_PEDAL[3], HIHAT_PEDAL[4]);
-  pad1.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad2.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad3.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad4.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad5.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad6.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad7.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
-  pad8.singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[0].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[1].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[2].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[3].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[4].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[5].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[6].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
+  pads[7].singlePiezo(PADS[0], PADS[1], PADS[2], PADS[3]);
 
   // Kick
 
@@ -157,51 +160,51 @@ void loop()
 
   // Pads
 
-  if (pad1.hit == true)
+  if (pads[0].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[0], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[0], pads[0].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[0], 0, MIDI_CHANNEL);
   }
 
-  else if (pad2.hit == true)
+  else if (pads[1].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[1], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[1], pads[1].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[1], 0, MIDI_CHANNEL);
   }
 
-  else if (pad3.hit == true)
+  else if (pads[2].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[2], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[2], pads[2].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[2], 0, MIDI_CHANNEL);
   }
 
-  else if (pad4.hit == true)
+  else if (pads[3].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[3], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[3], pads[3].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[3], 0, MIDI_CHANNEL);
   }
 
-  else if (pad5.hit == true)
+  else if (pads[4].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[4], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[4], pads[4].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[4], 0, MIDI_CHANNEL);
   }
 
-  else if (pad6.hit == true)
+  else if (pads[5].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[5], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[5], pads[5].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[5], 0, MIDI_CHANNEL);
   }
 
-  else if (pad7.hit == true)
+  else if (pads[6].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[6], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[6], pads[6].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[6], 0, MIDI_CHANNEL);
   }
 
-  else if (pad8.hit == true)
+  else if (pads[7].hit == true)
   {
-    usbMIDI.sendNoteOn(PAD_NOTES[7], pad1.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(PAD_NOTES[7], pads[7].velocity, MIDI_CHANNEL); //(note, velocity, channel)
     usbMIDI.sendNoteOff(PAD_NOTES[7], 0, MIDI_CHANNEL);
   }
 }
