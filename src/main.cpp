@@ -145,8 +145,8 @@ void loop()
 
     if (hihatPedal.velocity > HIHAT_PEDAL[6])
     {
-      usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, 10);
-      usbMIDI.sendNoteOff(HIHAT_PEDAL[5], 0, 10);
+      usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, MIDI_CHANNEL);
+      usbMIDI.sendNoteOff(HIHAT_PEDAL[5], 0, MIDI_CHANNEL);
     }
   }
 
