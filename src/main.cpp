@@ -106,7 +106,7 @@ void loop()
 
   if (kick.hit == true)
   {
-    usbMIDI.sendNoteOn(KICK[4], kick.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(KICK[4], kick.velocity, MIDI_CHANNEL);
     usbMIDI.sendNoteOff(KICK[4], 0, MIDI_CHANNEL);
   }
 
@@ -114,12 +114,12 @@ void loop()
 
   if (snare.hit == true)
   {
-    usbMIDI.sendNoteOn(SNARE[7], snare.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(SNARE[7], snare.velocity, MIDI_CHANNEL);
     usbMIDI.sendNoteOff(SNARE[7], 0, MIDI_CHANNEL);
   }
   else if (snare.hitRim == true)
   {
-    usbMIDI.sendNoteOn(SNARE[8], snare.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+    usbMIDI.sendNoteOn(SNARE[8], snare.velocity, MIDI_CHANNEL);
     usbMIDI.sendNoteOff(SNARE[8], 0, MIDI_CHANNEL);
   }
 
@@ -129,12 +129,12 @@ void loop()
   {
     if (hihatPedal.openHH == true)
     {
-      usbMIDI.sendNoteOn(HIHAT[4], hihat.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOn(HIHAT[4], hihat.velocity, MIDI_CHANNEL);
       usbMIDI.sendNoteOff(HIHAT[4], 0, MIDI_CHANNEL);
     }
     else if (hihatPedal.closeHH == true)
     {
-      usbMIDI.sendNoteOn(HIHAT[5], hihat.velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOn(HIHAT[5], hihat.velocity, MIDI_CHANNEL);
       usbMIDI.sendNoteOff(HIHAT[5], 0, MIDI_CHANNEL);
     }
   }
@@ -145,7 +145,7 @@ void loop()
 
     if (hihatPedal.velocity > HIHAT_PEDAL[6])
     {
-      usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, 10); //(note, velocity, channel)
+      usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, 10);
       usbMIDI.sendNoteOff(HIHAT_PEDAL[5], 0, 10);
     }
   }
@@ -155,7 +155,7 @@ void loop()
   for (int i = 0; i < 8; i++) {
     if (pads[i].hit == true)
     {
-      usbMIDI.sendNoteOn(PAD_NOTES[i], pads[i].velocity, MIDI_CHANNEL); //(note, velocity, channel)
+      usbMIDI.sendNoteOn(PAD_NOTES[i], pads[i].velocity, MIDI_CHANNEL);
       usbMIDI.sendNoteOff(PAD_NOTES[i], 0, MIDI_CHANNEL);
     }
   }
