@@ -6,8 +6,8 @@
 byte KICK[6] = {
   100, // sensitivity (1-100)
   10,  // threshold (1-100)
-  10,  // scan time (1-)
-  200, // mask time (1-)
+  50,  // scan time (1-)
+  100, // mask time (1-)
   36,  // note (0-127)
   3    // curve type (0-4)
 };
