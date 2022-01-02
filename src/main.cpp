@@ -12,7 +12,7 @@ byte KICK[6] = {
     3    //curve type (0-4)
 };
 
-byte SNARE[9] = {
+byte SNARE[11] = {
     90, //sensitivity (1-100)
     10, //threshold (1-100)
     5, //scan time (1-100)
@@ -21,7 +21,9 @@ byte SNARE[9] = {
     3,  //rim threshold (1-100)
     3,  //curve type (0-4)
     38, //note (0-127)
-    37  //note of cross stick (0-127)
+    40, // alternate snare
+    37, // note of rim (0-127)
+    39  // alterate rim
 };
 
 byte HIHAT[7] = {
@@ -79,6 +81,9 @@ HelloDrum pads[8] = {
   HelloDrum(7),
 };
 
+int shouldPlayNoteOnHihatPedalDown = 1;
+int shouldUseAlternateSnare = 2;
+int shouldUseAlternateRim = 3;
 
 void setup()
 {
@@ -89,6 +94,10 @@ void setup()
   for (int i = 0; i < 8; i++) {
     pads[i].setCurve(PADS[4]);
   }
+
+  pinMode(shouldPlayNoteOnHihatPedalDown, INPUT);
+  pinMode(shouldUseAlternateSnare, INPUT);
+  pinMode(shouldUseAlternateRim, INPUT);
 }
 
 void loop()
@@ -114,13 +123,23 @@ void loop()
 
   if (snare.hit == true)
   {
-    usbMIDI.sendNoteOn(SNARE[7], snare.velocity, MIDI_CHANNEL);
-    usbMIDI.sendNoteOff(SNARE[7], 0, MIDI_CHANNEL);
+    if (!digitalRead(shouldUseAlternateSnare)) {
+      usbMIDI.sendNoteOn(SNARE[7], snare.velocity, MIDI_CHANNEL);
+      usbMIDI.sendNoteOff(SNARE[7], 0, MIDI_CHANNEL);
+    } else {
+      usbMIDI.sendNoteOn(SNARE[8], snare.velocity, MIDI_CHANNEL);
+      usbMIDI.sendNoteOff(SNARE[8], 0, MIDI_CHANNEL);
+    }
   }
   else if (snare.hitRim == true)
   {
-    usbMIDI.sendNoteOn(SNARE[8], snare.velocity, MIDI_CHANNEL);
-    usbMIDI.sendNoteOff(SNARE[8], 0, MIDI_CHANNEL);
+    if (!digitalRead(shouldUseAlternateRim)) {
+      usbMIDI.sendNoteOn(SNARE[9], snare.velocity, MIDI_CHANNEL);
+      usbMIDI.sendNoteOff(SNARE[9], 0, MIDI_CHANNEL);
+    } else {
+      usbMIDI.sendNoteOn(SNARE[10], snare.velocity, MIDI_CHANNEL);
+      usbMIDI.sendNoteOff(SNARE[10], 0, MIDI_CHANNEL);
+    }
   }
 
   // HiHats
@@ -142,7 +161,7 @@ void loop()
   if (hihatPedal.hit == true)
   {
     usbMIDI.sendNoteOff(HIHAT[4], 0, MIDI_CHANNEL);
-    if (hihatPedal.velocity > HIHAT_PEDAL[6])
+    if (digitalRead(shouldPlayNoteOnHihatPedalDown))
     {
       usbMIDI.sendNoteOn(HIHAT_PEDAL[5], hihatPedal.velocity, MIDI_CHANNEL);
       usbMIDI.sendNoteOff(HIHAT_PEDAL[5], 0, MIDI_CHANNEL);
