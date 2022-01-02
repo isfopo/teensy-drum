@@ -4,54 +4,54 @@
 #define MIDI_CHANNEL 0
 
 byte KICK[6] = {
-  100, //sensitivity (1-100)
-  10,  //threshold (1-100)
-  10,  //scan time (1-)
-  200,  //mask time (1-)
-  36,  //note (0-127)
-  3    //curve type (0-4)
+  100, // sensitivity (1-100)
+  10,  // threshold (1-100)
+  10,  // scan time (1-)
+  200, // mask time (1-)
+  36,  // note (0-127)
+  3    // curve type (0-4)
 };
 
 byte SNARE[11] = {
-  90, //sensitivity (1-100)
-  10, //threshold (1-100)
-  5, //scan time (1-100)
-  40, //mask time (1-100)
-  20, //rim sensitivity (1-100)
-  3,  //rim threshold (1-100)
-  3,  //curve type (0-4)
-  38, //note (0-127)
+  90, // sensitivity (1-100)
+  10, // threshold (1-100)
+  5,  // scan time (1-100)
+  40, // mask time (1-100)
+  20, // rim sensitivity (1-100)
+  3,  // rim threshold (1-100)
+  3,  // curve type (0-4)
+  38, // note (0-127)
   40, // alternate snare
   37, // note of rim (0-127)
   39  // alterate rim
 };
 
 byte HIHAT[7] = {
-  100, //sensitivity
-  10,  //threshold
-  10,  //scan start
-  30,  //scan end
-  46,  //note of open
-  42,  //note of close
+  100, // sensitivity
+  10,  // threshold
+  10,  // scan start
+  30,  // scan end
+  46,  // note of open
+  42,  // note of close
   3
 };
 
 byte HIHAT_PEDAL[7] = {
-  100,  //sensitivity
-  15,  //threshold
-  10,  //scan start
-  100,  //scan end
-  10,  //pedal sensitivity
-  44,  //note of pedal
-  30, //note threshold
+  100, // sensitivity
+  15,  // threshold
+  10,  // scan start
+  100, // scan end
+  10,  // pedal sensitivity
+  44,  // note of pedal
+  30,  // note threshold
 };
 
 byte PADS[5]{
-  100, //sensitivity (1-100)
-  50,  //threshold (1-100)
-  10,  //scan time (1-)
-  200,  //mask time (1-)
-  1,   //curve type (0-4)
+  100, // sensitivity (1-100)
+  50,  // threshold (1-100)
+  10,  // scan time (1-)
+  200, // mask time (1-)
+  1,   // curve type (0-4)
 };
 
 byte PAD_NOTES[8] {
