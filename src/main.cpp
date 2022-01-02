@@ -41,7 +41,7 @@ byte HIHAT_PEDAL[7] = {
   15,  // threshold
   10,  // scan start
   100, // scan end
-  10,  // pedal sensitivity
+  100,  // pedal sensitivity
   44,  // note of pedal
   30,  // note threshold
 };
