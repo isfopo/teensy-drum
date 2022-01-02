@@ -95,9 +95,9 @@ void setup()
     pads[i].setCurve(PADS[4]);
   }
 
-  pinMode(shouldPlayNoteOnHihatPedalDown, INPUT);
-  pinMode(shouldUseAlternateSnare, INPUT);
-  pinMode(shouldUseAlternateRim, INPUT);
+  pinMode(shouldPlayNoteOnHihatPedalDown, INPUT_PULLUP);
+  pinMode(shouldUseAlternateSnare, INPUT_PULLUP);
+  pinMode(shouldUseAlternateRim, INPUT_PULLUP);
 }
 
 void loop()
