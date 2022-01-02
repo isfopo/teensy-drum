@@ -37,8 +37,8 @@ byte HIHAT[7] = {
 byte HIHAT_PEDAL[7] = {
     100,  //sensitivity
     15,  //threshold
-    5,  //scan start
-    10,  //scan end
+    10,  //scan start
+    100,  //scan end
     10,  //pedal sensitivity
     44,  //note of pedal
     30, //note threshold
