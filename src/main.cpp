@@ -33,7 +33,7 @@ byte HIHAT[7] = {
   30,  // scan end
   46,  // note of open
   42,  // note of close
-  3
+  3    // curve
 };
 
 byte HIHAT_PEDAL[7] = {
